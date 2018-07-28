@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         List<TabViewChild> tabViewChildren = new ArrayList<>();
         TabViewChild tabViewChildHome = new TabViewChild(R.drawable.tab_home_selector, R.drawable.tab_home_unselector, getString(R.string.tab_main_home), new HomeFragment());
-        TabViewChild tabViewChildClass = new TabViewChild(R.drawable.tab_home_selector, R.drawable.tab_home_unselector, getString(R.string.tab_main_class), new ClassificationFragment());
-        TabViewChild tabViewChildVip = new TabViewChild(R.drawable.tab_home_selector, R.drawable.tab_home_unselector, getString(R.string.tab_main_vip), new VipFragment());
-        TabViewChild tabViewChildMine = new TabViewChild(R.drawable.tab_home_selector, R.drawable.tab_home_unselector, getString(R.string.tab_main_mine), new MineFragment());
+        TabViewChild tabViewChildClass = new TabViewChild(R.drawable.tab_classs_selector, R.drawable.tab_class_unselector, getString(R.string.tab_main_class), new ClassificationFragment());
+        TabViewChild tabViewChildVip = new TabViewChild(R.drawable.tab_vip_selector, R.drawable.tab_vip_unselector, getString(R.string.tab_main_vip), new VipFragment());
+        TabViewChild tabViewChildMine = new TabViewChild(R.drawable.tab_mine_selector, R.drawable.tab_mine_unselector, getString(R.string.tab_main_mine), new MineFragment());
         tabViewChildren.add(tabViewChildHome);
         tabViewChildren.add(tabViewChildClass);
         tabViewChildren.add(tabViewChildVip);

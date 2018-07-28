@@ -38,4 +38,9 @@ dependencies {
     // BaseRecyclerViewAdapterHelper
     implementation 'com.github.ziv951011:BaseRecyclerViewAdapterHelper:2.1'
     implementation 'com.android.support:recyclerview-v7:28.0.0-beta01'
+    // 引入轮播
+    implementation 'com.youth.banner:banner:1.4.10'
+    // 引入图片加载框架
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
 }
