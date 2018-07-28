@@ -19,10 +19,23 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0-beta01'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // 引入Dagger2依赖
+    implementation 'com.google.dagger:dagger:2.4'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
+    // 快速搭建底部导航
+    implementation 'com.github.open-android:FragmentTabhostUtils:0.5.0'
+    // 引入屏幕适配
+    implementation 'com.zhy:autolayout:1.4.5'
+    //引入butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    // BaseRecyclerViewAdapterHelper
+    implementation 'com.github.ziv951011:BaseRecyclerViewAdapterHelper:2.1'
+    implementation 'com.android.support:recyclerview-v7:28.0.0-beta01'
 }

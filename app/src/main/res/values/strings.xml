@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">video</string>
+    <string name="tab_main_home">首页</string>
+    <string name="tab_main_class">分类</string>
+    <string name="tab_main_vip">会员</string>
+    <string name="tab_main_mine">我的</string>
 </resources>
