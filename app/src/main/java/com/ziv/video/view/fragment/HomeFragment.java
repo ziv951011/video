@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ziv.video.R;
 import com.ziv.video.model.entity.DataEntity;
 import com.ziv.video.model.entity.HomeItemEntity;

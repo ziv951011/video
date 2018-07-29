@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/recent_launch_top_view"/>
+
+    <!--具体的展示数据-->
+    <com.ziv.video.view.weight.MyGridView
+        android:id="@+id/rv_recent_launch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="3"/>
+
+</com.zhy.autolayout.AutoLinearLayout>

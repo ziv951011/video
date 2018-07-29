@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.heima.tabview.library.TabView;
 import com.heima.tabview.library.TabViewChild;
 import com.ziv.video.R;
+import com.ziv.video.utils.Transparency;
 import com.ziv.video.view.fragment.ClassificationFragment;
 import com.ziv.video.view.fragment.HomeFragment;
 import com.ziv.video.view.fragment.MineFragment;
@@ -25,9 +26,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // 设置沉浸式状态栏
+        Transparency.initTransparency(this);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
         initView();
     }
 

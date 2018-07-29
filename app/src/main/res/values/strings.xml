@@ -4,4 +4,7 @@
     <string name="tab_main_class">分类</string>
     <string name="tab_main_vip">会员</string>
     <string name="tab_main_mine">我的</string>
+    <string name="recent_hit">最近热播 ></string>
+    <string name="recent_launch">近期上线 ></string>
+    <string name="gif_title">超时空同居搞笑上映中</string>
 </resources>

@@ -13,6 +13,9 @@ public class DataEntity {
     public static List<HomeItemEntity> getHomeData() {
         List<HomeItemEntity> homeItemEntities = new ArrayList<>();
         homeItemEntities.add(new HomeItemEntity(HomeItemEntity.HOME_BANNER, HomeItemEntity.HOME_BANNER_SPAN_SIZE));
+        homeItemEntities.add(new HomeItemEntity(HomeItemEntity.HOME_RECENT_HIT, HomeItemEntity.HOME_RECENT_HIT_SPAN_SIZE));
+        homeItemEntities.add(new HomeItemEntity(HomeItemEntity.HOME_RECENT_LAUNCH, HomeItemEntity.HOME_RECENT_LAUNCH_SPAN_SIZE));
+        homeItemEntities.add(new HomeItemEntity(HomeItemEntity.HOME_GIT_MOIVE, HomeItemEntity.HOME_GIT_MOIVE_SPAN_SIZE));
         return homeItemEntities;
     }
 }
