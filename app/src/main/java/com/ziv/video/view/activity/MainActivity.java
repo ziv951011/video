@@ -3,6 +3,7 @@ package com.ziv.video.view.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.gyf.barlibrary.ImmersionBar;
 import com.heima.tabview.library.TabView;
 import com.heima.tabview.library.TabViewChild;
 import com.ziv.video.R;
@@ -22,14 +23,23 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.tabView)
     TabView tabView;
+    private ImmersionBar immersionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // 设置沉浸式状态栏
-        Transparency.initTransparency(this);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        immersionBar = ImmersionBar.with(this);
+        /*
+         *.statusBarDarkFont(true, 0.2f).
+         * 可以解决状态栏颜色不通一的情况
+         * */
+        immersionBar
+                .transparentStatusBar()
+                .statusBarColor(R.color.black).
+                init();
         initView();
     }
 
@@ -52,5 +62,12 @@ public class MainActivity extends AppCompatActivity {
         tabView.setTabViewDefaultPosition(0);
         // 设置间距
         tabView.setImageViewTextViewMargin(2);
-   }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (immersionBar != null)
+            immersionBar.destroy();
+    }
 }

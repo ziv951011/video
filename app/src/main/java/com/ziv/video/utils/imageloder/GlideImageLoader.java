@@ -4,7 +4,10 @@ import android.content.Context;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.youth.banner.loader.ImageLoader;
+import com.ziv.video.R;
 
 public class GlideImageLoader extends ImageLoader {
     @Override
@@ -16,8 +19,15 @@ public class GlideImageLoader extends ImageLoader {
          传输的到的是什么格式，那么这种就使用Object接收和返回，你只需要强转成你传输的类型就行，
          切记不要胡乱强转！
          */
-        //Glide 加载图片简单用法
-        Glide.with(context).load(path).into(imageView);
+        RequestOptions options = new RequestOptions()
+                .skipMemoryCache(false)    //不跳过内存缓存
+                .diskCacheStrategy(DiskCacheStrategy.ALL)    //缓存所有版本的图像
+                ;
+
+        Glide.with(context)
+                .load(path)
+                .apply(options)
+                .into(imageView);
 
     }
 

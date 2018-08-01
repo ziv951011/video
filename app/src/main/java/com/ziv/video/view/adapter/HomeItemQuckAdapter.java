@@ -35,8 +35,6 @@ public class HomeItemQuckAdapter extends BaseMultiItemQuickAdapter<HomeItemEntit
      */
     public HomeItemQuckAdapter(List<HomeItemEntity> data) {
         super(data);
-        // 添加Banner
-        addItemType(HomeItemEntity.HOME_BANNER, R.layout.home_item_banner);
         // 最近热播
         addItemType(HomeItemEntity.HOME_RECENT_HIT, R.layout.home_item_recent_hit);
         // 近期上线
@@ -50,9 +48,6 @@ public class HomeItemQuckAdapter extends BaseMultiItemQuickAdapter<HomeItemEntit
     protected void convert(BaseViewHolder helper, HomeItemEntity item) {
         // 根据Item的值绑定对应的数据
         switch (item.getItemType()) {
-            case HomeItemEntity.HOME_BANNER:
-                initBannerData(helper);
-                break;
             case HomeItemEntity.HOME_RECENT_HIT:
                 initRecentHit(helper);
                 break;
@@ -174,43 +169,4 @@ public class HomeItemQuckAdapter extends BaseMultiItemQuickAdapter<HomeItemEntit
         HomeItemRecentHitAdapter homeItemRecentHitAdapter = new HomeItemRecentHitAdapter(mContext, homeItemRecentHitEntities);
         rvRencentHit.setAdapter(homeItemRecentHitAdapter);
     }
-
-    /***
-     * 绑定banner数据
-     * @param helper
-     */
-    private void initBannerData(BaseViewHolder helper) {
-
-        /**
-         * 假设数据为下面的
-         */
-        List<String> images = new ArrayList<>();
-        images.add("http://pic2.iqiyipic.com/common/lego/20180728/cc1a7e0628d746d4a0b94ec3c4029d80.jpg");
-        images.add("http://pic2.iqiyipic.com/common/lego/20180717/feab895c7db7413b9e541f99a03dbbd0.jpg");
-        images.add("http://pic2.iqiyipic.com/common/lego/20180727/c92f3f52662241d98934339713d57384.jpg");
-        images.add("http://pic3.iqiyipic.com/common/lego/20180720/0148995dfd3042699a3b2678e26da84d.jpg");
-
-        Banner banner = helper.getView(R.id.home_banner);
-        //设置banner样式
-        banner.setBannerStyle(BannerConfig.CENTER);
-        //设置图片加载器
-        banner.setImageLoader(new GlideImageLoader());
-        //设置图片集合
-        banner.setImages(images);
-        //设置banner动画效果
-        banner.setBannerAnimation(Transformer.CubeOut);
-        // 设置自动播放
-        banner.isAutoPlay(true);
-        //设置轮播时间
-        banner.setDelayTime(DELAY_TIME);
-        //设置指示器位置（当banner模式中有指示器时）
-        banner.setIndicatorGravity(BannerConfig.RIGHT);
-        //banner设置方法全部调用完毕时最后调用
-        banner.start();
-
-    }
-
-
-
-
 }
